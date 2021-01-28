@@ -2,12 +2,529 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>White Lotus</title>
+    <link rel="stylesheet" type="text/css" href="node_modules/slick-carousel/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="node_modules/slick-carousel/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="dist/css/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="dist/css/magnific-popup.css">
+    <link rel="stylesheet" href="dist/css/main.min.css">
+    <link rel="stylesheet" href="dist/css/hover-min.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=03db92ee-d6a6-434b-a3a6-340946d44e7d&lang=ru_RU"
+            type="text/javascript"></script>
+    <script type="text/javascript">
+        ymaps.ready(init);
+
+        function init() {
+            let myMap = new ymaps.Map("map", {
+                center: [57.123851, 65.564502],
+                zoom: 16
+            });
+            myGeoObject = new ymaps.GeoObject({
+                // Описание геометрии.
+                geometry: {
+                    type: "Point",
+                    coordinates: [57.123851, 65.564502]
+                }
+            })
+            myGeoObject2 = new ymaps.GeoObject({
+                // Описание геометрии.
+                geometry: {
+                    type: "Point",
+                    coordinates: [57.124982, 65.561519]
+                }
+            })
+            myGeoObject3 = new ymaps.GeoObject({
+                // Описание геометрии.
+                geometry: {
+                    type: "Point",
+                    coordinates: [57.123386, 65.572466]
+                }
+            })
+
+            myMap.geoObjects
+                .add(myGeoObject)
+                .add(myGeoObject2)
+                .add(myGeoObject3)
+        }
+    </script>
 </head>
 <body>
+<header class="header">
+    <div class="container">
+        <nav class="header-menu">
+            <a href="#" class="header-menu-item">Услуги</a>
+            <a href="#" class="header-menu-item">Мастера</a>
+            <a href="#" class="header-menu-item">Галерея фото</a>
+            <a href="#" class="header-menu-item">FAQ</a>
+        </nav>
+        <div id="logo" class="logo">
+            <div class="logo-title">White Lotus</div>
+            <div class="logo-subtitle">МАССАЖНЫЙ САЛОН</div>
+        </div>
+        <a href="tel:+79814588596" class="spa-phone">+7&nbsp;(981)&nbsp;458-85-96</a>
+    </div>
+</header>
+<main>
+    <section class="info wow animate__fadeIn">
+        <div class="container">
+            <div class="info-content">
+                <h1 class="info-title">
+                    Территория умиротворения и красоты в <span class="logo-title">White Lotus</span>
+                </h1>
+                <p class="info-text">
+                    Наши программы направлены на релаксацию<br> и комплексное оздоровление организма,
+                    а наши мастера — квалифицированные специалисты<br> с медицинским образованием.
+                </p>
+                <a href="#" class="btn info-btn hvr-radial-in">Выбрать SPA-программу</a>
+            </div>
+        </div>
+    </section>
+    <section class="features">
+        <div class="container wow animate__fadeInLeft">
+            <h2 class="second-title">Что вас ждет в нашем салоне</h2>
+            <div class="features-items">
+                <div class="features-item">
+                    <div class="features-item-image">
+                        <img src="images/feature1.png" alt="">
+                    </div>
+                    <div class="features-item-text">
+                        Большой выбор СПА-ритуалов и программ на любой вкус со строгим соблюдением регламентов тайских
+                        методик
+                    </div>
+                </div>
+                <div class="features-item">
+                    <div class="features-item-image">
+                        <img src="images/feature2.png" alt="">
+                    </div>
+                    <div class="features-item-text">
+                        В салонах работают только этнические мастера из Таиланда и о.Бали, прошедшие тщательный отбор
+                    </div>
+                </div>
+                <div class="features-item">
+                    <div class="features-item-image">
+                        <img src="images/feature3.png" alt="">
+                    </div>
+                    <div class="features-item-text">
+                        СПА-ритуалы и программы выполняются на натуральной и профессиональной косметике из Таиланда
+                    </div>
+                </div>
+                <div class="features-item">
+                    <div class="features-item-image">
+                        <img src="images/feature4.png" alt="">
+                    </div>
+                    <div class="features-item-text">
+                        Щедрая программа лояльности для постоянных гостей и наличие сезонных акций
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="features-bg">
+            <img src="images/feature-bg.png" alt="">
+        </div>
+        <div class="features-bg-right">
+            <img src="images/feature-bg-right.png" alt="">
+        </div>
+    </section>
+    <section class="products">
+        <div class="container wow animate__fadeInRight">
+            <h2 class="second-title">Наши SPA-ритуалы</h2>
+            <p class="products-text">
+                Мы предлагаем вам более 50 видов SPA-процедур различной направленнности от сертифицированных мастеров из
+                Таиланда и о. Бали.
+            </p>
+            <div class="products-items">
+                <div class="products-item">
+                    <div class="products-item-image">
+                        <img src="images/product1.png" alt="">
+                    </div>
+                    <div class="products-item-content">
+                        <h3 class="products-item-title">Массаж камнями</h3>
+                        <p class="products-item-text">
+                            Расслабляет мышцы, увеличивает интенсивность обменных процессов, приносит ощущение
+                            физического
+                            покоя и душевного равновесия.
+                        </p>
+                        <p class="products-item-time">Сеанс: 1 час</p>
+                        <span class="products-item-price">от 3 700 руб.</span>
+                        <button type="button" class="btn products-item-btn hvr-radial-in">Записаться</button>
+                    </div>
+                </div>
+                <div class="products-item">
+                    <div class="products-item-image">
+                        <img src="images/product2.png" alt="">
+                    </div>
+                    <div class="products-item-content">
+                        <h3 class="products-item-title">Балийский массаж</h3>
+                        <p class="products-item-text">
+                            Помогает в лечении спортивных травм, мигреней, бессонницы, астмы, депрессий, аллергий,
+                            остеохондроза, радикулита или гастрит.
+                        </p>
+                        <p class="products-item-time">Сеанс: 1 час</p>
+                        <span class="products-item-price">от 3 100 руб.</span>
+                        <button type="button" class="btn products-item-btn hvr-radial-in">Записаться</button>
+                    </div>
+                </div>
+                <div class="products-item">
+                    <div class="products-item-image">
+                        <img src="images/product3.png" alt="">
+                    </div>
+                    <div class="products-item-content">
+                        <h3 class="products-item-title">С травяными мешочками</h3>
+                        <p class="products-item-text">
+                            Целебные вещества распаренных трав свободно проникают сквозь них, максимально обогащая
+                            организм.
+                            Мешочки изготовлены из 100% нетканого хлопка.
+                        </p>
+                        <p class="products-item-time">Сеанс: 1,5 часа</p>
+                        <span class="products-item-price">от 5 700 руб.</span>
+                        <button type="button" class="btn products-item-btn hvr-radial-in">Записаться</button>
+                    </div>
+                </div>
+                <div class="products-item">
+                    <div class="products-item-image">
+                        <img src="images/product4.png" alt="">
+                    </div>
+                    <div class="products-item-content">
+                        <h3 class="products-item-title">Антицеллюлитный массаж</h3>
+                        <p class="products-item-text">
+                            Глубокое воздействие активных антицеллюлитных составов разрушают подкожный жир, запускаются
+                            обменные процессы, нормализуют лимфодренаж.
+                        </p>
+                        <p class="products-item-time">Сеанс: 1,5 часа</p>
+                        <span class="products-item-price">от 4 800 руб.</span>
+                        <button type="button" class="btn products-item-btn hvr-radial-in">Записаться</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="products-image">
+            <img src="images/products-flowers.png" alt="">
+        </div>
+        <div class="products-bg">
+            <img src="images/products-bg.png" alt="">
+        </div>
+    </section>
+    <section class="gift">
+        <div class="container wow animate__fadeInLeft">
+            <h2 class="second-title">Уход за лицом в подарок</h2>
+            <p class="gift-text">Сходите на процедуру массажа камнями и мы сделаем вам альгинатную маску!</p>
+            <button type="button" class="btn gift-btn hvr-radial-in">Записаться на ритуал</button>
+        </div>
+        <div class="gift-image wow animate__fadeInRight" data-wow-offset="220">
+            <img src="images/gift-img.png" alt="">
+        </div>
+        <div class="gift-bg">
+            <img src="images/gift-bg.png" alt="">
+        </div>
+        <div class="gift-ellipse">
+            <img src="images/gift-ellipse.png" alt="">
+        </div>
+        <div class="gift-ellipse-small">
+            <img src="images/gift-ellipse-small.png" alt="">
+        </div>
+    </section>
+    <section class="team">
+        <div class="container wow animate__fadeIn" data-wow-offset="150">
+            <h2 class="second-title">Наши мастера</h2>
+            <p class="team-text">
+                Все мастера спа-салонов «White Lotus» обучаются в Таиланде и на о.Бали, проходят строгий отбор и владеют
+                секретами многовековых традиций тайских и балинезийских методик оздоровления.
+            </p>
+            <div class="team-items">
+                <div class="team-item">
+                    <div class="team-item-image">
+                        <img src="images/master1.jpg" alt="">
+                    </div>
+                    <div class="team-item-info">
+                        <h3 class="team-item-name">Иван Лушинский</h3>
+                        <p class="team-item-skill">Стаж: 6 лет</p>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <div class="team-item-image">
+                        <img src="images/master2.jpg" alt="">
+                    </div>
+                    <div class="team-item-info">
+                        <h3 class="team-item-name">Маргарита Линк</h3>
+                        <p class="team-item-skill">Стаж: 10 лет</p>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <div class="team-item-image">
+                        <img src="images/master3.jpg" alt="">
+                    </div>
+                    <div class="team-item-info">
+                        <h3 class="team-item-name">Александра Морковная</h3>
+                        <p class="team-item-skill">Стаж: 4 года</p>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <div class="team-item-image">
+                        <img src="images/master4.jpg" alt="">
+                    </div>
+                    <div class="team-item-info">
+                        <h3 class="team-item-name">Анна Павлова</h3>
+                        <p class="team-item-skill">Стаж: 8 лет</p>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <div class="team-item-image">
+                        <img src="images/master3.jpg" alt="">
+                    </div>
+                    <div class="team-item-info">
+                        <h3 class="team-item-name">Мария Прохорова</h3>
+                        <p class="team-item-skill">Стаж: 5 лет</p>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <div class="team-item-image">
+                        <img src="images/master5.jpg" alt="">
+                    </div>
+                    <div class="team-item-info">
+                        <h3 class="team-item-name">Люсия Сью</h3>
+                        <p class="team-item-skill">Стаж: 15 лет</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="team-bg">
+            <img src="images/team-bg.png" alt="">
+        </div>
+    </section>
+    <section class="gallery">
+        <div class="container wow animate__fadeIn">
+            <h2 class="second-title">Галерея фото</h2>
+            <p class="gallery-text">
+                Убедитесь, что наши массажные комнаты выглядят так, как вам нравится, чтобы в наших салонах вы смогли
+                расслабиться и получить настоящее удовольствие от наших программ.
+            </p>
+        </div>
+        <div class="gallery-images wow animate__fadeIn popup-gallery">
+            <div class="gallery-image">
+                <a href="images/gallery1.jpg" title="Салон по адресу: Минск, ул. Жасминовая, д. 3B">
+                    <img src="images/gallery1.jpg" alt="">
+                </a>
+            </div>
+            <div class="gallery-image">
+                <a href="images/gallery2.jpg" title="Салон по адресу: Минск, ул. Кирова, д. 5">
+                    <img src="images/gallery2.jpg" alt="">
+                </a>
+            </div>
+            <div class="gallery-image">
+                <a href="images/gallery3.jpg" title="Салон по адресу: Минск, ул. Братская, д. 18">
+                    <img src="images/gallery3.jpg" alt="">
+                </a>
+            </div>
+            <div class="gallery-image">
+                <a href="images/gallery4.jpg" title="Салон по адресу: Минск, ул. Стеклянная, д. 98">
+                    <img src="images/gallery4.jpg" alt="">
+                </a>
+            </div>
+            <div class="gallery-image">
+                <a href="images/gallery5.jpg" title="Салон по адресу: Москва, ул. Первомайская, д.5">
+                    <img src="images/gallery5.jpg" alt="">
+                </a>
+            </div>
+            <div class="gallery-image">
+                <a href="images/gallery6.jpg" title="Салон по адресу: Москва, ул. Ленина, д.19">
+                    <img src="images/gallery6.jpg" alt="">
+                </a>
+            </div>
+            <div class="gallery-image">
+                <a href="images/gallery7.jpg" title="Салон по адресу: Москва, ул. Мира, д.11">
+                    <img src="images/gallery7.jpg" alt="">
+                </a>
+            </div>
+            <div class="gallery-image">
+                <a href="images/gallery8.jpg" title="Салон по адресу: Москва, ул. Победы, д.99">
+                    <img src="images/gallery8.jpg" alt="">
+                </a>
+            </div>
+            <div class="gallery-image">
+                <a href="images/gallery9.jpg" title="Салон по адресу: Москва, ул. 30 лет октября д.8">
+                    <img src="images/gallery9.jpg" alt="">
+                </a>
+            </div>
+            <div class="gallery-image">
+                <a href="images/gallery10.jpg" title="Салон по адресу: Москва, ул. Тихая, д.52">
+                    <img src="images/gallery10.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="gallery-bg-right">
+            <img src="images/gallery-bg.png" alt="">
+        </div>
+        <div class="gallery-bg-left">
+            <img src="images/gallery-bg-left.png" alt="">
+        </div>
+        <div class="gallery-bg-center">
+            <img src="images/gallery-bg-center.png" alt="">
+        </div>
+    </section>
+    <section class="questions">
+        <div class="container">
+            <h2 class="second-title wow animate__fadeInLeft">Часто задаваемые вопросы</h2>
+            <div class="questions-content">
+                <div class="questions-items wow animate__fadeInLeft" id="accordion">
+                    <h3 class="questions-item-title">
+                        Как я могу записаться на процедуру?
+                        <span class="questions-item-title-arrow"></span>
+                    </h3>
+                    <div class="questions-item-text">
+                        <p>
+                            Вы можете записаться на процедуру онлайн прямо на нашем сайте. Также вы можете позвонить
+                            нам по телефону <span>+7 (981) 458-85-96</span> или прямо на сайте заказать обратный
+                            звонок и мы перезвоним вам.
+                        </p>
+                    </div>
+                    <h3 class="questions-item-title">
+                        Нужно ли предварительно записываться на процедуры?
+                        <span class="questions-item-title-arrow"></span>
+                    </h3>
+                    <div class="questions-item-text">
+                        <p>
+                            Мы советуем заранее записываться на желаемую процедуру с целью экомонии вашего
+                            драгоценного времени, так как в момент обращения в салон мастера могут быть заняты.
+                            В случае предварительной записи, вы получите услугу без ожидания.
+                        </p>
+                    </div>
+                    <h3 class="questions-item-title">
+                        Какие противопоказания есть для массажей?
+                        <span class="questions-item-title-arrow"></span>
+                    </h3>
+                    <div class="questions-item-text">
+                        <p>
+                            Массажы которые мы проводим в нашем салоне не имеют противопаказаний. Но лучше перед
+                            посещением проконсультироваться к врачём. Так же на массаж нельзя приходить в состоянии
+                            алкогольного или наркотического опьянения.
+                        </p>
+                    </div>
+                    <h3 class="questions-item-title">
+                        Что нужно брать с собой для массажа?
+                        <span class="questions-item-title-arrow"></span>
+                    </h3>
+                    <div class="questions-item-text">
+                        <p>
+                            Для массажа нет необходимости брать с собой что-то дополнительно. Рекомендуется взять с
+                            собой хорошее настроение, так же приветствуется компания друзей, для непринужденного общения
+                            с расслабляющей обстановке.
+                        </p>
+                    </div>
+                    <h3 class="questions-item-title">
+                        Могу я провести в вашем салоне девичник?
+                        <span class="questions-item-title-arrow"></span>
+                    </h3>
+                    <div class="questions-item-text">
+                        <p>
+                            Да, в нашем салоне вы можете провести девичник, предварительно позвонив по телефону
+                            и сообщить желаемые дату и время, количество человек и какие процедуры вы бы хотели
+                            получить.
+                        </p>
+                    </div>
+                </div>
+                <form action="" class="questions-form wow animate__fadeInRight">
+                    <p class="questions-form-text">
+                        Если вы не нашли здесь ответа на свой вопрос, то вы можете позвонить нам по телефону
+                        <span>+7 (981) 458 85 96</span> и мы с радостью вас проконсультируем! Или просто закажите
+                        обратный звонок и мы сами вам перезвоним!
+                    </p>
+                    <input type="text" name="userPhone" id="user-phone" placeholder="Ваш номер телефона">
+                    <button type="button" id="questions-btn" class="btn hvr-radial-in">Позвонить мне</button>
+                    <div class="questions-image-rose">
+                        <img src="images/questions-rose.png" alt="">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="questions-image-bg">
+            <img src="images/questions-bg.png" alt="">
+        </div>
+    </section>
+    <section class="contacts">
+        <div class="container">
+            <div class="contacts-content wow animate__fadeInLeft">
+                <h2 class="second-title">Контакты</h2>
+                <div class="contacts-addresses">
+                    <h3 class="contacts-subtitle">Адреса наших салонов:</h3>
+                    <p>Минск, ул. Жасминовая, д. 3B</p>
+                    <p>Минск, ул. Кирова, д. 5</p>
+                    <p>Минск, ул. Братская, д. 18</p>
+                    <p>Минск, ул. Стеклянная, д. 98</p>
+                </div>
+                <div class="contacts-time">
+                    <h3 class="contacts-subtitle">Время работы всех салонов:</h3>
+                    <p>Ежедневно с 9:00 до 22:00</p>
+                </div>
+                <div class="contacts-phone">
+                    <h3 class="contacts-subtitle">Единый номер телефона:</h3>
+                    <p>+7 (981) 458-85-96</p>
+                </div>
+            </div>
+            <div id="map" class="wow animate__fadeInRight"></div>
+            <div class="contacts-img">
+                <img src="images/contacts-img.png" alt="">
+            </div>
+            <div class="contacts-bg">
+                <img src="images/contacts-bg.png" alt="">
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="container">
+        <div class="footer-social">
+            <a href="https://www.vk.com" target="_blank">
+                <svg id="vk" enable-background="new 0 0 24 24" viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="m19.915 13.028c-.388-.49-.277-.708 0-1.146.005-.005 3.208-4.431 3.538-5.932l.002-.001c.164-.547 0-.949-.793-.949h-2.624c-.668 0-.976.345-1.141.731 0 0-1.336 3.198-3.226 5.271-.61.599-.892.791-1.225.791-.164 0-.419-.192-.419-.739v-5.105c0-.656-.187-.949-.74-.949h-4.126c-.419 0-.668.306-.668.591 0 .622.945.765 1.043 2.515v3.797c0 .832-.151.985-.486.985-.892 0-3.057-3.211-4.34-6.886-.259-.713-.512-1.001-1.185-1.001h-2.625c-.749 0-.9.345-.9.731 0 .682.892 4.073 4.148 8.553 2.17 3.058 5.226 4.715 8.006 4.715 1.671 0 1.875-.368 1.875-1.001 0-2.922-.151-3.198.686-3.198.388 0 1.056.192 2.616 1.667 1.783 1.749 2.076 2.532 3.074 2.532h2.624c.748 0 1.127-.368.909-1.094-.499-1.527-3.871-4.668-4.023-4.878z"/>
+                </svg>
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <svg id="fb" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m437 0h-362c-41.351562 0-75 33.648438-75 75v362c0 41.351562 33.648438 75 75 75h151v-181h-60v-90h60v-61c0-49.628906 40.371094-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.351562 0 75-33.648438 75-75v-362c0-41.351562-33.648438-75-75-75zm0 0"/>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <svg id="instagram" viewBox="0 0 512.00096 512.00096" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m373.40625 0h-234.8125c-76.421875 0-138.59375 62.171875-138.59375 138.59375v234.816406c0 76.417969 62.171875 138.589844 138.59375 138.589844h234.816406c76.417969 0 138.589844-62.171875 138.589844-138.589844v-234.816406c0-76.421875-62.171875-138.59375-138.59375-138.59375zm-117.40625 395.996094c-77.195312 0-139.996094-62.800782-139.996094-139.996094s62.800782-139.996094 139.996094-139.996094 139.996094 62.800782 139.996094 139.996094-62.800782 139.996094-139.996094 139.996094zm143.34375-246.976563c-22.8125 0-41.367188-18.554687-41.367188-41.367187s18.554688-41.371094 41.367188-41.371094 41.371094 18.558594 41.371094 41.371094-18.558594 41.367187-41.371094 41.367187zm0 0"/>
+                    <path d="m256 146.019531c-60.640625 0-109.980469 49.335938-109.980469 109.980469 0 60.640625 49.339844 109.980469 109.980469 109.980469 60.644531 0 109.980469-49.339844 109.980469-109.980469 0-60.644531-49.335938-109.980469-109.980469-109.980469zm0 0"/>
+                    <path d="m399.34375 96.300781c-6.257812 0-11.351562 5.09375-11.351562 11.351563 0 6.257812 5.09375 11.351562 11.351562 11.351562 6.261719 0 11.355469-5.089844 11.355469-11.351562 0-6.261719-5.09375-11.351563-11.355469-11.351563zm0 0"/>
+                </svg>
+            </a>
+            <a href="https://www.youtube.com" target="_blank">
+                <svg id="youtube" viewBox="0 0 512 512">
+                    <g>
+                        <g>
+                            <path d="M490.24,113.92c-13.888-24.704-28.96-29.248-59.648-30.976C399.936,80.864,322.848,80,256.064,80
+                            c-66.912,0-144.032,0.864-174.656,2.912c-30.624,1.76-45.728,6.272-59.744,31.008C7.36,138.592,0,181.088,0,255.904
+                            C0,255.968,0,256,0,256c0,0.064,0,0.096,0,0.096v0.064c0,74.496,7.36,117.312,21.664,141.728
+                            c14.016,24.704,29.088,29.184,59.712,31.264C112.032,430.944,189.152,432,256.064,432c66.784,0,143.872-1.056,174.56-2.816
+                            c30.688-2.08,45.76-6.56,59.648-31.264C504.704,373.504,512,330.688,512,256.192c0,0,0-0.096,0-0.16c0,0,0-0.064,0-0.096
+                            C512,181.088,504.704,138.592,490.24,113.92z M192,352V160l160,96L192,352z"/>
+                        </g>
+                    </g>
+                </svg>
+            </a>
+        </div>
+        <div class="logo">
+            <div class="logo-title">White Lotus</div>
+            <div class="logo-subtitle">МАССАЖНЫЙ САЛОН</div>
+        </div>
+        <div class="footer-info">
+            <p>Ежедневно с 9:00 до 22:00</p>
+            <p>+7 (981) 458-85-96</p>
+        </div>
+    </div>
+</footer>
 
 
-
-
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js" ></script>
+<script src="node_modules/wow.js/dist/wow.min.js"></script>
+<script type="text/javascript" src="node_modules/slick-carousel/slick/slick.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
