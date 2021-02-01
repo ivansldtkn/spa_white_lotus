@@ -58,14 +58,124 @@ $(document).ready(() => {
         gallery: {
             enabled: true,
             navigateByImgClick: true,
-            preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+            preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
         },
         image: {
             tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-            titleSrc: function(item) {
+            titleSrc: function (item) {
                 return item.el.attr('title');
             }
         }
     });
+
+    $('#dtBox').DateTimePicker(
+        {
+            shortDayNames: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+            fullDayNames: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
+            fullMonthNames: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+            shortMonthNames: ["Янв", "Февр", "Март", "Апр", "Май", "Июнь", "Июль", "Авг", "Сент", "Окт", "Нояб", "Дек"]
+        }
+    );
+
+    let productClick = $('.products-item-btn');
+    let popup = $('.popup-order-container');
+    let selectOption = $('.select-option');
+    productClick.click((e) => {
+        popup.addClass('active');
+        for (let i = 0; i < selectOption.length; i++) {
+            selectOption[i].removeAttribute('selected');
+            if (e.target.dataset.name === selectOption[i].id) {
+                selectOption[i].setAttribute('selected', 'true');
+            }
+        }
+    })
+
+    $('.gift-btn').click(() => {
+        popup.addClass('active');
+        $('#stoneMassage')[0].setAttribute('selected', 'true');
+    })
+
+    popup.click((e) => {
+        if (e.target.className === 'popup-order-container active') {
+            popup.removeClass('active');
+        }
+    })
+    $('.popup-close').click(() => {
+        popup.removeClass('active');
+    })
+
+    let userName = $('#userName');
+    let userPhone = $('#userPhone');
+    let userProduct = $('#userProduct');
+    let userDate = $('#userDate');
+
+    userPhone.inputmask({"mask": "+ 7 (999) 999-9999"});
+
+
+    $('.popup-order-btn').click(() => {
+
+        if (userName.val() && userPhone.val() && userProduct.val() && userDate.val()) {
+
+            $.ajax({
+                type: 'POST',
+                url: 'mail.php',
+                data: 'userName=' + userName.val() + '&userPhone=' + userPhone.val() + '&userProduct=' + userProduct.val() + '&userDate=' + userDate.val(),
+                success: () => {
+                    $('#popup-order-form').hide();
+                    $('.popup-order-sent').show();
+                },
+                error: () => {
+                    popup.removeClass('active');
+                    alert('Ошибка бронирования. Свяжитесь, пожалуйста, по номеру телефона.');
+                }
+            });
+        } else {
+
+            $('.form-error').show();
+
+            if (!userName.val()) {
+                userName.css('border-color', 'red');
+            }
+            if (!userPhone.val()) {
+                userPhone.css('border-color', 'red');
+            }
+            if (!userProduct.val()) {
+                userProduct.css('border-color', 'red');
+            }
+            if (!userDate.val()) {
+                userDate.css('border-color', 'red');
+            }
+        }
+    })
+
+
+    let callMeNumber = $('#callMeNumber');
+    callMeNumber.inputmask({"mask": "+ 7 (999) 999-9999"});
+
+    let callMeBtn = $('#questions-btn');
+    callMeBtn.click(() => {
+        if (callMeNumber.val()) {
+            $.ajax({
+                type: 'POST',
+                url: 'callme.php',
+                data: 'phoneNumber=' + callMeNumber.val(),
+                success: () => {
+                    $('.questions-form').css('display', 'none');
+                    $('.questions-form-sent').css('display','flex');
+                },
+                error: () => {
+                    $('.call-error').removeClass('error-active');
+                    callMeNumber.css('border-color', 'rgb(114, 17, 99)');
+                    alert('Ошибка запроса. Свяжитесь, пожалуйста, по номеру телефона +7 (981) 458 85 96.');
+                }
+            });
+        } else {
+            $('.call-error').addClass('error-active');
+            callMeNumber.css('border-color', 'red');
+        }
+    })
+
+
+
 
 })

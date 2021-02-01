@@ -2,15 +2,16 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>White Lotus</title>
     <link rel="stylesheet" type="text/css" href="node_modules/slick-carousel/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="node_modules/slick-carousel/slick/slick-theme.css"/>
     <link rel="stylesheet" href="dist/css/jquery-ui.min.css"/>
     <link rel="stylesheet" href="dist/css/magnific-popup.css">
     <link rel="stylesheet" href="dist/css/main.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/DateTimePicker.css">
     <link rel="stylesheet" href="dist/css/hover-min.css">
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://api-maps.yandex.ru/2.1/?apikey=03db92ee-d6a6-434b-a3a6-340946d44e7d&lang=ru_RU"
             type="text/javascript"></script>
     <script type="text/javascript">
@@ -54,10 +55,10 @@
 <header class="header">
     <div class="container">
         <nav class="header-menu">
-            <a href="#" class="header-menu-item">Услуги</a>
-            <a href="#" class="header-menu-item">Мастера</a>
-            <a href="#" class="header-menu-item">Галерея фото</a>
-            <a href="#" class="header-menu-item">FAQ</a>
+            <a href="#products" class="header-menu-item">Услуги</a>
+            <a href="#team" class="header-menu-item">Мастера</a>
+            <a href="#gallery" class="header-menu-item">Галерея фото</a>
+            <a href="#questions" class="header-menu-item">FAQ</a>
         </nav>
         <div id="logo" class="logo">
             <div class="logo-title">White Lotus</div>
@@ -77,7 +78,7 @@
                     Наши программы направлены на релаксацию<br> и комплексное оздоровление организма,
                     а наши мастера — квалифицированные специалисты<br> с медицинским образованием.
                 </p>
-                <a href="#" class="btn info-btn hvr-radial-in">Выбрать SPA-программу</a>
+                <a href="#products" class="btn info-btn hvr-radial-in">Выбрать SPA-программу</a>
             </div>
         </div>
     </section>
@@ -127,7 +128,7 @@
             <img src="images/feature-bg-right.png" alt="">
         </div>
     </section>
-    <section class="products">
+    <section class="products" id="products">
         <div class="container wow animate__fadeInRight">
             <h2 class="second-title">Наши SPA-ритуалы</h2>
             <p class="products-text">
@@ -148,7 +149,7 @@
                         </p>
                         <p class="products-item-time">Сеанс: 1 час</p>
                         <span class="products-item-price">от 3 700 руб.</span>
-                        <button type="button" class="btn products-item-btn hvr-radial-in">Записаться</button>
+                        <button type="button" data-name="stoneMassage" class="btn products-item-btn hvr-radial-in">Записаться</button>
                     </div>
                 </div>
                 <div class="products-item">
@@ -163,7 +164,7 @@
                         </p>
                         <p class="products-item-time">Сеанс: 1 час</p>
                         <span class="products-item-price">от 3 100 руб.</span>
-                        <button type="button" class="btn products-item-btn hvr-radial-in">Записаться</button>
+                        <button type="button" data-name="balineseMassage" class="btn products-item-btn hvr-radial-in">Записаться</button>
                     </div>
                 </div>
                 <div class="products-item">
@@ -179,7 +180,7 @@
                         </p>
                         <p class="products-item-time">Сеанс: 1,5 часа</p>
                         <span class="products-item-price">от 5 700 руб.</span>
-                        <button type="button" class="btn products-item-btn hvr-radial-in">Записаться</button>
+                        <button type="button" data-name="withHerbalBags" class="btn products-item-btn hvr-radial-in">Записаться</button>
                     </div>
                 </div>
                 <div class="products-item">
@@ -194,7 +195,7 @@
                         </p>
                         <p class="products-item-time">Сеанс: 1,5 часа</p>
                         <span class="products-item-price">от 4 800 руб.</span>
-                        <button type="button" class="btn products-item-btn hvr-radial-in">Записаться</button>
+                        <button type="button" data-name="anticelluliteMassage" class="btn products-item-btn hvr-radial-in">Записаться</button>
                     </div>
                 </div>
             </div>
@@ -225,7 +226,7 @@
             <img src="images/gift-ellipse-small.png" alt="">
         </div>
     </section>
-    <section class="team">
+    <section class="team" id="team">
         <div class="container wow animate__fadeIn" data-wow-offset="150">
             <h2 class="second-title">Наши мастера</h2>
             <p class="team-text">
@@ -293,7 +294,7 @@
             <img src="images/team-bg.png" alt="">
         </div>
     </section>
-    <section class="gallery">
+    <section class="gallery" id="gallery">
         <div class="container wow animate__fadeIn">
             <h2 class="second-title">Галерея фото</h2>
             <p class="gallery-text">
@@ -363,7 +364,7 @@
             <img src="images/gallery-bg-center.png" alt="">
         </div>
     </section>
-    <section class="questions">
+    <section class="questions" id="questions">
         <div class="container">
             <h2 class="second-title wow animate__fadeInLeft">Часто задаваемые вопросы</h2>
             <div class="questions-content">
@@ -424,18 +425,24 @@
                         </p>
                     </div>
                 </div>
-                <form action="" class="questions-form wow animate__fadeInRight">
-                    <p class="questions-form-text">
-                        Если вы не нашли здесь ответа на свой вопрос, то вы можете позвонить нам по телефону
-                        <span>+7 (981) 458 85 96</span> и мы с радостью вас проконсультируем! Или просто закажите
-                        обратный звонок и мы сами вам перезвоним!
-                    </p>
-                    <input type="text" name="userPhone" id="user-phone" placeholder="Ваш номер телефона">
-                    <button type="button" id="questions-btn" class="btn hvr-radial-in">Позвонить мне</button>
-                    <div class="questions-image-rose">
-                        <img src="images/questions-rose.png" alt="">
+                <div class="questions-form-container">
+                    <form action="" class="questions-form wow animate__fadeInRight">
+                        <p class="questions-form-text">
+                            Если вы не нашли здесь ответа на свой вопрос, то вы можете позвонить нам по телефону
+                            <span>+7 (981) 458 85 96</span> и мы с радостью вас проконсультируем! Или просто закажите
+                            обратный звонок и мы сами вам перезвоним!
+                        </p>
+                        <input type="tel" name="callMeNumber" id="callMeNumber" placeholder="Ваш номер телефона">
+                        <h4 class="call-error">Введите ваш номер телефона</h4>
+                        <button type="button" id="questions-btn" class="btn hvr-radial-in">Позвонить мне</button>
+                        <div class="questions-image-rose">
+                            <img src="images/questions-rose.png" alt="">
+                        </div>
+                    </form>
+                    <div class="questions-form-sent">
+                        <p>Спасибо, мы свяжемся с вами в течение 5 минут.</p>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
         <div class="questions-image-bg">
@@ -471,6 +478,36 @@
             </div>
         </div>
     </section>
+    <div class="popup-order-container">
+        <div class="popup-order">
+
+            <form action="" method="POST" id="popup-order-form">
+                <p><input type="text" name="userName" id="userName" placeholder="Ваше имя"></p>
+                <p><input type="tel" name="userPhone" id="userPhone" placeholder="Ваш телефон"></p>
+                <p><select name="userProduct" id="userProduct">
+                    <option value="" class="select-option">Выберите ритаул</option>
+                    <option id="stoneMassage" class="select-option" value="Массаж камнями">Массаж камнями</option>
+                    <option id="balineseMassage" class="select-option" value="Балийский массаж">Балийский массаж</option>
+                    <option id="withHerbalBags" class="select-option" value="С травяными мешочками">С травяными мешочками</option>
+                    <option id="anticelluliteMassage" class="select-option" value="Антицеллюлитный массаж">Антицеллюлитный массаж</option>
+                </select>
+                </p>
+                <p><input name="userDate" id="userDate" data-field="datetime" readonly
+                          placeholder="Выберите дату и время"></p>
+                <h4 class="form-error">Заполните все поля!</h4>
+                <button type="button" class="btn popup-order-btn">Записаться</button>
+            </form>
+
+            <div class="popup-order-sent">
+                <h3 class="order-sent-title">Спасибо за заказ!</h3>
+                <p class="order-sent-text">Мы обязательно вам перезвоним в течение 15 минут!</p>
+            </div>
+            <div class="popup-close">
+                <img src="images/close.png" alt="">
+            </div>
+            <div id="dtBox"></div>
+        </div>
+    </div>
 </main>
 <footer>
     <div class="container">
@@ -508,10 +545,10 @@
                 </svg>
             </a>
         </div>
-        <div class="logo">
+        <a href="#logo"  class="logo">
             <div class="logo-title">White Lotus</div>
             <div class="logo-subtitle">МАССАЖНЫЙ САЛОН</div>
-        </div>
+        </a>
         <div class="footer-info">
             <p>Ежедневно с 9:00 до 22:00</p>
             <p>+7 (981) 458-85-96</p>
@@ -522,9 +559,12 @@
 
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js" ></script>
+<script src="js/jquery.inputmask.min.js"></script>
+<script type="text/javascript" src="js/DateTimePicker.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
 <script src="node_modules/wow.js/dist/wow.min.js"></script>
 <script type="text/javascript" src="node_modules/slick-carousel/slick/slick.min.js"></script>
+<script type="text/javascript" src="js/DateTimePicker-i18n.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

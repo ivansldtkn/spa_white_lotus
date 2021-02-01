@@ -23,6 +23,10 @@
   src: url('../../fonts/Marguaritas.ttf') format('truetype')
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @mixin header-text {
   padding: 3px;
   font-family: "NunitoSemiBold", sans-serif;
@@ -630,7 +634,7 @@ a {
   height: 50px;
   position: absolute;
   text-align: center;
-  background: rgba(250,247,250,.3);
+  background: rgba(250, 247, 250, .3);
   top: 10px;
   right: -35px;
   font-size: 40px;
@@ -770,7 +774,7 @@ a {
         }
       }
 
-      #user-phone {
+      #callMeNumber {
         margin: 30px 0 15px;
         border: 1px solid rgb(114, 17, 99);
         background-color: #f5eff3;
@@ -789,6 +793,16 @@ a {
       #questions-btn {
         width: 282px;
         padding: 11px 0;
+      }
+
+      .call-error {
+        display: none;
+        color: red;
+        margin-bottom: 10px;
+
+        &.error-active {
+          display: block;
+        }
       }
     }
   }
@@ -810,6 +824,26 @@ a {
   .questions-image-rose {
     bottom: 0;
     right: 50px;
+  }
+}
+
+.questions-form-sent {
+  position: relative;
+  max-width: 465px;
+  height: 300px;
+  padding: 30px 50px;
+  background: #faf7fa;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 9px 1px rgba(67, 6, 57, 0.1);
+
+  p {
+    font-size: 20px;
+    font-family: "NunitoSemiBold", sans-serif;
+    text-align: center;
   }
 }
 
@@ -878,7 +912,6 @@ a {
     display: block;
     max-width: 100%;
   }
-
 }
 
 footer {
@@ -918,8 +951,6 @@ footer {
           height: 34px;
         }
       }
-
-
     }
 
     .footer-info {
@@ -935,6 +966,115 @@ footer {
         }
       }
     }
-
   }
 }
+
+.popup-order-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: rgba(102, 93, 98, .7);
+
+  .popup-order {
+    margin: 0 auto;
+    width: 428px;
+    background: #faf7fa;
+    border-radius: 15px;
+    padding: 60px;
+    position: relative;
+
+    .form-error {
+      display: none;
+      color: red;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    form {
+      text-align: center;
+
+
+      p {
+        margin-bottom: 24px;
+
+        &:nth-child(3) {
+          &:after {
+            content: url("../../images/arrow-small.png");
+            position: absolute;
+            width: 14px;
+            right: 78px;
+            top: 224px;
+          }
+        }
+
+
+        input, select {
+          display: inline-block;
+          width: 100%;
+          border: 1px solid rgb(114, 17, 99);
+          background-color: transparent;
+          border-radius: 22px;
+          padding: 15px 20px;
+          outline: 0;
+          font-size: 14px;
+          font-family: "NunitoSemiBold", sans-serif;
+
+          &::placeholder {
+            font-size: 14px;
+            color: #2c0526;
+          }
+        }
+
+        select {
+          cursor: pointer;
+          appearance: none;
+        }
+      }
+
+    }
+
+    .popup-order-sent {
+      padding: 134px 10px;
+      display: none;
+
+      .order-sent-title {
+        margin: 0 auto 30px auto;
+        font-size: 20px;
+        font-family: "NunitoBold", sans-serif;
+        color: rgb(114, 17, 99);
+        text-align: center;
+
+      }
+
+      .order-sent-text {
+        margin: 0 auto;
+        font-size: 18px;
+        line-height: 1.2;
+        text-align: center;
+      }
+    }
+
+    .popup-close {
+      position: absolute;
+      right: -65px;
+      top: 0;
+      cursor: pointer;
+
+      img {
+        display: block;
+      }
+    }
+
+  }
+
+  &.active {
+    display: flex;
+  }
+}
+
+@import "adaptive";
