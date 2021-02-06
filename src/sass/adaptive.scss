@@ -1,0 +1,96 @@
+// 1440px - 1920px
+@media screen and (max-width: 1919px) {
+  .contacts .contacts-bg {
+    right: -120px;
+  }
+
+  .gift .gift-ellipse {
+    z-index: 3;
+  }
+
+  .gallery .slick-prev:before, .gallery .slick-next:before {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1715px) {
+  .products .products-image {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .features {
+    padding: 100px 0;
+
+    .features-items .features-item:last-child {
+      margin-left: 140px;
+    }
+  }
+
+  .gift .container .gift-image {
+    right: 0;
+  }
+
+  .team {
+    padding-bottom: 140px;
+  }
+
+  .contacts .contacts-bg {
+    right: 0;
+  }
+
+  .gallery .gallery-images {
+    width: 99%;
+    margin: 0 auto;
+  }
+
+  .questions .questions-content .questions-items {
+    width: 55%;
+  }
+
+  .contacts {
+    padding: 110px 0 145px;
+  }
+
+  .contacts .contacts-img {
+      bottom: -120px;
+      left: -65px;
+      z-index: -1;
+      max-width: 335px;
+  }
+
+  .contacts .contacts-content .contacts-addresses {
+    margin: 45px 0 30px;
+  }
+
+  .contacts #map {
+    width: 730px;
+  }
+
+  .gift .gift-ellipse, .gift .gift-ellipse-small {
+    display: none;
+  }
+
+  footer .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  footer .container .footer-info p:first-child {
+    margin-right: 30px;
+  }
+
+}
+
+@media screen and (max-width: 1199px) {
+
+}
+
+
+
+

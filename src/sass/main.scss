@@ -153,6 +153,7 @@ a {
 
 .info {
   background: url("../../images/info-bg.png") center 5px;
+  background-size: cover;
   padding: 260px 0 280px;
 
   .info-content {
@@ -184,6 +185,7 @@ a {
 
   .features-bg, .features-bg-right {
     position: absolute;
+    z-index: -1;
   }
 
   .features-bg {
@@ -334,7 +336,7 @@ a {
 
 .gift {
   background: #f5f4f3;
-  padding: 170px 0 205px;
+  padding: 170px 0 206px;
   position: relative;
 
   img {
@@ -343,7 +345,8 @@ a {
   }
 
   .container {
-    z-index: 1;
+    z-index: 4;
+    position: relative;
 
     .gift-text {
       max-width: 355px;
@@ -357,13 +360,16 @@ a {
       width: 232px;
       padding: 14px 0;
     }
+
+    .gift-image {
+      position: absolute;
+      top: -170px;
+      right: -95px;
+      z-index: -1;
+    }
   }
 
-  .gift-image {
-    position: absolute;
-    top: 0;
-    right: 190px;
-  }
+
 
   .gift-bg {
     position: absolute;
@@ -381,6 +387,7 @@ a {
     position: absolute;
     top: 0;
     left: 170px;
+    z-index: 5;
   }
 }
 
@@ -421,6 +428,7 @@ a {
         height: 311px;
         overflow: hidden;
         border-radius: 8px;
+        margin: 0 auto;
 
         img {
           max-width: 100%;
@@ -644,7 +652,7 @@ a {
 
 
 .questions {
-  background: url("../../images/questions-bg-main.png") 0 0 no-repeat;
+  background: url("../../images/questions-bg-main.png") 100% 0 no-repeat;
   background-size: cover;
   padding: 45px 0;
   position: relative;
