@@ -7,13 +7,38 @@ $(document).ready(() => {
     );
     wow.init();
 
+
     $('.team-items').slick({
+        refresh: true,
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 3,
         dots: true,
         autoplay: true,
-        autoplaySpeed: 4000
+        autoplaySpeed: 4000,
+        responsive: [
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 910,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            },
+        ]
     });
 
     $('.gallery-images').slick({
@@ -175,7 +200,13 @@ $(document).ready(() => {
         }
     })
 
+    $('#burger').click(() => {
+        $('.header-menu').toggleClass('open-menu');
+    });
 
+    $('.header-menu .header-menu-item').click(() => {
+        $('.header-menu').removeClass('open-menu');
+    });
 
 
 })
