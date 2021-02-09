@@ -1,26 +1,26 @@
 @font-face {
   font-family: 'NunitoRegular';
-  src: url('../../fonts/Nunito-Regular.ttf') format('truetype')
+  src: url('../../dist/fonts/Nunito-Regular.ttf') format('truetype')
 }
 
 @font-face {
   font-family: 'NunitoBold';
-  src: url('../../fonts/Nunito-Bold.ttf') format('truetype')
+  src: url('../../dist/fonts/Nunito-Bold.ttf') format('truetype')
 }
 
 @font-face {
   font-family: 'NunitoExtraBold';
-  src: url('../../fonts/Nunito-ExtraBold.ttf') format('truetype')
+  src: url('../../dist/fonts/Nunito-ExtraBold.ttf') format('truetype')
 }
 
 @font-face {
   font-family: 'NunitoSemiBold';
-  src: url('../../fonts/Nunito-SemiBold.ttf') format('truetype')
+  src: url('../../dist/fonts/Nunito-SemiBold.ttf') format('truetype')
 }
 
 @font-face {
   font-family: 'Marguaritas';
-  src: url('../../fonts/Marguaritas.ttf') format('truetype')
+  src: url('../../dist/fonts/Marguaritas.ttf') format('truetype')
 }
 
 html {
@@ -165,7 +165,7 @@ a {
 }
 
 .info {
-  background: url("../../images/info-bg.png") center 5px;
+  background: url("../../dist/images/info-bg.png") center 5px;
   background-size: cover;
   padding: 260px 0 280px;
 
@@ -360,7 +360,7 @@ a {
   }
 
   .container {
-    z-index: 4;
+    z-index: 6;
     position: relative;
 
     .gift-text {
@@ -487,11 +487,11 @@ a {
   }
 
   .slick-prev::before {
-    content: url("../../images/prev.png");
+    content: url("../../dist/images/prev.png");
   }
 
   .slick-next::before {
-    content: url("../../images/next.png");
+    content: url("../../dist/images/next.png");
   }
 
   .slick-dots {
@@ -605,11 +605,11 @@ a {
   }
 
   .slick-prev::before {
-    content: url("../../images/prev.png");
+    content: url("../../dist/images/prev.png");
   }
 
   .slick-next::before {
-    content: url("../../images/next.png");
+    content: url("../../dist/images/next.png");
   }
 
   .slick-dots {
@@ -667,7 +667,7 @@ a {
 
 
 .questions {
-  background: url("../../images/questions-bg-main.png") 100% 0 no-repeat;
+  background: url("../../dist/images/questions-bg-main.png") 100% 0 no-repeat;
   background-size: cover;
   padding: 45px 0;
   position: relative;
@@ -738,7 +738,7 @@ a {
           position: absolute;
           width: 22px;
           height: 12px;
-          background: url("../../images/arrow.png");
+          background: url("../../dist/images/arrow.png");
           top: 37px;
           right: 30px;
           transition: transform .4s linear;
@@ -1027,7 +1027,7 @@ footer {
 
         &:nth-child(3) {
           &:after {
-            content: url("../../images/arrow-small.png");
+            content: url("../../dist/images/arrow-small.png");
             position: absolute;
             width: 14px;
             right: 78px;
